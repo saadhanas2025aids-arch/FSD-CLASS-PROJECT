@@ -33,19 +33,28 @@ function App() {
 }
 
 export default App;*/}
-
-import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
-import Login from "./pages/login";
-import Projects from "./pages/projects";
-import Tasks from "./pages/tasks";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "../src/pages/login";
+import Projects from '../src/pages/projects';
+import Tasks from '../src/pages/tasks';
+import Team from '../src/pages/team';
+import Client from '../src/pages/clients';
+import Dashboard from '../src/pages/dashboard';
+import Calender from '../src/pages/calender';
+import Settings from '../src/pages/settings';
+import Clients from "../src/pages/clients";
 function App() {
   return ( 
-    <BrowserRouter>
+     <BrowserRouter>
       <Routes>
-        <Route path = "/ " element = {<Login/>} />
-        <Route path = "/projects" element = {<Projects/>} />
-        <Route path = "/tasks" element = {<Tasks/>} />
+        <Route path='/' element={<Login/>} />
+        <Route path='/projects' element={<Projects/>}/>
+        <Route path = '/tasks' element={<Tasks/>}/>
+        <Route path='/team' element={<Team/>}/>
+        <Route path='/clients' element={<Clients/>}/>
+        <Route path='/dashboard' element={<Dashboard/>}/>
+        <Route path='/calender' element={<Calender/>}/>
+        <Route path='/settings' element={<Settings/>}/>
 
       </Routes>
     </BrowserRouter>
