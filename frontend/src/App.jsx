@@ -44,6 +44,10 @@ import Calender from '../src/pages/calender';
 import Settings from '../src/pages/settings';
 import Clients from "../src/pages/clients";
 import Register from "../src/pages/register";
+import AdminDashboard from "./pages/Admin/dashboard";
+import AdminSettings from "./pages/Admin/settings";
+import AdminUserDetails from "./pages/Admin/userDetails";
+import AdminLayout from "./pages/Admin/adminlayout";
 function App() {
   return ( 
      <BrowserRouter>
@@ -57,7 +61,12 @@ function App() {
         <Route path='/calender' element={<Calender/>}/>
         <Route path='/settings' element={<Settings/>}/>
         <Route path='/register' element={<Register/>}/>
-
+        <Route path='/admin' element={<AdminLayout/>}>
+           
+           <Route path='admindashboard' element={<AdminDashboard/>}/>
+           <Route path='settings' element={<AdminSettings/>}/>
+           <Route path='userdetails' element={<AdminUserDetails/>}/>
+        </Route>
       </Routes>
     </BrowserRouter>
    );
