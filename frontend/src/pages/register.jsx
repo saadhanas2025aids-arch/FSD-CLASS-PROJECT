@@ -25,7 +25,7 @@ function Register(){
             <h2 className="text-xl font-bold text-center text-purple-600">REGISTER PAGE</h2>
             <div>
                 <input type="text" required placeholder="Enter your name" {...register("name")} className="w-full border border-blue-800 rounded-md px-3 py-2"/>
-                {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
+                {errors.name && <p className="text-red-500 text- sm">{errors.name.message}</p>}
             </div>
             <div>
                 <input type="email" required placeholder="Enter your email" {...register("email")} className="w-full border border-blue-800 rounded-md px-3 py-2"/>
