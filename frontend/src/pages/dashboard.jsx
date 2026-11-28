@@ -1,27 +1,32 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import API from "../components/FormSchema/app";
 
 function Dashboard() {
     const location = useLocation();
     const[userdata, setUserdata] = useState("");
-    const [count,setCount]=useState(0)
+    
     function displaydata(){
        setUserdata(location.state);
        console.log(userdata)
     }  
+    const [count,setCount]=useState(0);
     useEffect(()=>{
-        setUserdata(location.state);
+        setUserdata(count+1);
     },[])
-    
-    //const [check,setCheck]=useState(2)
-    //useEffect(()=>{
-     //   console.log(count)
-    //},[check])  
     console.log(count)
+
+    const checkendpoint =async()=>{
+        const response = await API.get("api/get");
+        console.log(response.data)
+    }
     return ( 
         <>
-            <button onclick={displaydata}>button</button>
-            <div>{userdata.username}{userdata.password}</div>
+           
+            <div>
+            <>{userdata.username} {userdata.password}</>
+            <button onClick={checkendpoint}> Button</button>
+            </div>
         </>
      );
 }
